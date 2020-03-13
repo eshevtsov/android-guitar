@@ -1,1 +1,1 @@
-# android-guitar
+# android-guitar-assistant
