@@ -8,10 +8,6 @@ object Dep {
     const val androidxCoreKtx = "androidx.core:core-ktx:${Version.androidxCoreKtx}"
 }
 
-fun DependencyHandler.kotlinJdk() {
-    implementation(Dep.kotlinJdk)
-}
-
 fun DependencyHandler.appCompat() {
     implementation(Dep.appcompat)
     implementation(Dep.androidxCoreKtx)

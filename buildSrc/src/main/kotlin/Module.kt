@@ -1,4 +1,6 @@
 object Module {
-    const val buildSrc = ":buildSrc"
-    const val app = ":app"
+    const val coreUi = ":core:ui"
+    const val coreFeature = ":core:feature"
+
+    const val featureSplash = ":feature:splash"
 }

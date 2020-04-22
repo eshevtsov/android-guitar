@@ -1,5 +1,10 @@
 rootProject.name = "GuitarAssistant"
 
 include(
-    ":app"
+    ":app",
+
+    ":core:ui",
+    ":core:feature",
+    
+    ":feature:splash"
 )
