@@ -6,6 +6,8 @@ object Dep {
 
     const val appcompat = "androidx.appcompat:appcompat:${Version.appcompat}"
     const val androidxCoreKtx = "androidx.core:core-ktx:${Version.androidxCoreKtx}"
+
+    const val material = "com.google.android.material:material:${Version.material}"
 }
 
 fun DependencyHandler.appCompat() {

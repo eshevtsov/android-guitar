@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">@color/color_raisin_black</color>
+    <color name="color_primary_variant">@color/color_black_chocolate</color>
+    <color name="color_on_primary">@color/color_white</color>
+
+    <color name="color_secondary">@color/color_tan</color>
+    <color name="color_secondary_variant">@color/color_light_orange</color>
+    <color name="color_on_secondary">@color/color_white</color>
+
+    <color name="color_error">@color/color_red_ryb</color>
+    <color name="color_on_error">@color/color_white</color>
+
+    <color name="color_surface">@color/color_raisin_black</color>
+    <color name="color_on_surface">@color/color_white</color>
+
+    <color name="color_background">@color/color_black_chocolate</color>
+    <color name="color_on_background">@color/color_white</color>
+</resources>

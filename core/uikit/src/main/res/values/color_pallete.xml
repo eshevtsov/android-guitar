@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_jet">#333333</color>
+    <color name="color_red_ryb">#FE2712</color>
+    <color name="color_cultured">#F7F7F7</color>
+    <color name="color_tan">#D9B493</color>
+    <color name="color_light_orange">#E4C8A7</color>
+    <color name="color_raisin_black">#2B201C</color>
+    <color name="color_black_chocolate">#211612</color>
+
+    <color name="ic_launcher_background">@color/color_white</color>
+</resources>
