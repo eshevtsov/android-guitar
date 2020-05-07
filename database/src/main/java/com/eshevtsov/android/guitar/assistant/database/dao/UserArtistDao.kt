@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
 import com.eshevtsov.android.guitar.assistant.database.dto.UserArtistListDto
+import com.eshevtsov.android.guitar.assistant.database.dto.UserArtistWithAlbumsListDto
 import com.eshevtsov.android.guitar.assistant.database.entity.UserArtistEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -27,4 +28,8 @@ interface UserArtistDao : BaseOperationsDao<UserArtistEntity> {
     @Transaction
     @Query("SELECT * FROM user_artist WHERE user_artist.user_id=:userId")
     fun getArtistList(userId: Long): Flow<UserArtistListDto>
+
+    @Transaction
+    @Query("SELECT * FROM user_artist WHERE user_artist.user_id=:userId")
+    fun getArtistWithAlbumsList(userId: Long): Flow<UserArtistWithAlbumsListDto>
 }
