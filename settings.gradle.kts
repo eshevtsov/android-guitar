@@ -5,6 +5,8 @@ include(
 
     ":core:uikit",
     ":core:feature",
+
+    ":database",
     
     ":feature:splash"
 )
