@@ -17,3 +17,11 @@ fun DependencyHandler.compileOnly(depName: String) {
 fun DependencyHandler.api(depName: String) {
     add("api", depName)
 }
+
+fun DependencyHandler.testImplementation(depName: String) {
+    add("testImplementation", depName)
+}
+
+fun DependencyHandler.androidTestImplementation(depName: String) {
+    add("androidTestImplementation", depName)
+}
