@@ -7,6 +7,7 @@ buildscript {
     }
     dependencies {
         classpath(Plugin.gradle)
+        classpath(Plugin.navigationSafeArgs)
         classpath(kotlin("gradle-plugin", Version.kotlin))
     }
 }
