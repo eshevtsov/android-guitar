@@ -5,9 +5,11 @@
     <color name="color_red_ryb">#FE2712</color>
     <color name="color_cultured">#F7F7F7</color>
     <color name="color_tan">#D9B493</color>
-    <color name="color_light_orange">#E4C8A7</color>
+    <color name="color_dutch_white">#ECD6B5</color>
+    <color name="color_liver_chestnut">#8F6C58</color>
     <color name="color_raisin_black">#2B201C</color>
     <color name="color_black_chocolate">#211612</color>
+    <color name="color_black_coffee">#403632</color>
 
-    <color name="ic_launcher_background">@color/color_white</color>
+    <color name="ic_launcher_background">@color/color_tan</color>
 </resources>
