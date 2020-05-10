@@ -4,5 +4,6 @@ object Module {
 
     const val database = ":database"
 
-    const val featureSplash = ":feature:splash"
+    const val featureHome = ":feature:home"
+    const val featureLogin = ":feature:login"
 }

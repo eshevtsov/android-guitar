@@ -7,6 +7,7 @@ include(
     ":core:feature",
 
     ":database",
-    
-    ":feature:splash"
+
+    ":feature:home",
+    ":feature:login"
 )

@@ -1,3 +1,7 @@
+plugins {
+    id("androidx.navigation.safeargs.kotlin")
+}
+
 android {
     defaultConfig {
         applicationId = App.applicationId
@@ -11,9 +15,12 @@ android {
 }
 
 dependencies {
-    implementation(project(Module.coreUi))
-    implementation(project(Module.featureSplash))
+    implementation(project(Module.coreFeature))
+    implementation(project(Module.featureHome))
+    implementation(project(Module.featureLogin))
 
-    implementation(Dep.kotlinJdk)
     appCompat()
+    navigation()
+    fragment()
+    koin()
 }
