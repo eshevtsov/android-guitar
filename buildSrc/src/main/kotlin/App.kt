@@ -6,4 +6,5 @@ object App {
     const val compileSdk = 29
     const val versionName = "0.0.1"
     const val versionCode = 1
+    const val kotlinJvmTarget = "1.8"
 }
