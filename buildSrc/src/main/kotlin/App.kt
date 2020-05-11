@@ -1,4 +1,6 @@
 object App {
+    const val RELEASE = "release"
+
     const val applicationId = "com.eshevtsov.android.guitar.assistant"
 
     const val minSdk = 21
