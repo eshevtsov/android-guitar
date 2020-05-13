@@ -1,5 +1,6 @@
 object App {
     const val RELEASE = "release"
+    const val DEBUG = "debug"
 
     const val applicationId = "com.eshevtsov.android.guitar.assistant"
 

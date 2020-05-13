@@ -1,30 +1,29 @@
+
+import com.android.build.gradle.BaseExtension
 import extensions.KeystoreModel
 import extensions.fromProperties
 
-val keystoreConfig = KeystoreModel.fromProperties(
-    "${projectDir.path}\\signing_configs.properties"
-)
+val releaseKeystore = KeystoreModel.fromProperties("${projectDir.path}\\release_configs.properties")
+val debugKeystore = KeystoreModel.fromProperties("${projectDir.path}\\debug_configs.properties")
 
 plugins {
     id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    signingConfigs {
-        create(App.RELEASE) {
-            storeFile = file(keystoreConfig.path)
-            storePassword = keystoreConfig.password
-            keyAlias = keystoreConfig.keyAlias
-            keyPassword = keystoreConfig.keyPassword
-        }
-    }
     defaultConfig {
         applicationId = App.applicationId
     }
-
+    createSigningConfigs(
+        Signing.DEBUG to debugKeystore,
+        Signing.RELEASE to releaseKeystore
+    )
     buildTypes {
+        getByName(App.DEBUG) {
+            signingConfig = signingConfigs.getByName(Signing.DEBUG)
+        }
         getByName(App.RELEASE) {
-            signingConfig = signingConfigs.getByName(App.RELEASE)
+            signingConfig = signingConfigs.getByName(Signing.RELEASE)
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -40,3 +39,19 @@ dependencies {
     fragment()
     koin()
 }
+
+fun Project.createSigningConfigs(
+    vararg keystoreList: Pair<String, KeystoreModel>
+) =
+    keystoreList.forEach { (name: String, model: KeystoreModel) ->
+        configure<BaseExtension> {
+            signingConfigs {
+                create(name) {
+                    storeFile = file(model.path)
+                    storePassword = model.password
+                    keyAlias = model.keyAlias
+                    keyPassword = model.keyPassword
+                }
+            }
+        }
+    }
