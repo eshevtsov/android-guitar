@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b54f91ddf7fb4f7fa161dd632f3cfc01",
+    "identityHash": "7c0503ec4e0959661799d3078d909458",
     "entities": [
       {
         "tableName": "album",
@@ -347,11 +347,11 @@
       },
       {
         "tableName": "user",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`google_token_hash` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`google_token_id` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
-            "fieldPath": "googleTokenHash",
-            "columnName": "google_token_hash",
+            "fieldPath": "googleTokenId",
+            "columnName": "google_token_id",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -370,12 +370,12 @@
         },
         "indices": [
           {
-            "name": "index_user_google_token_hash",
+            "name": "index_user_google_token_id",
             "unique": true,
             "columnNames": [
-              "google_token_hash"
+              "google_token_id"
             ],
-            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_user_google_token_hash` ON `${TABLE_NAME}` (`google_token_hash`)"
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_user_google_token_id` ON `${TABLE_NAME}` (`google_token_id`)"
           }
         ],
         "foreignKeys": []
@@ -384,7 +384,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b54f91ddf7fb4f7fa161dd632f3cfc01')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7c0503ec4e0959661799d3078d909458')"
     ]
   }
 }

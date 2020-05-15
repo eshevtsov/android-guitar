@@ -22,6 +22,6 @@ interface UserDao : BaseOperationsDao<UserEntity> {
     @Query("SELECT count(*) FROM user")
     override suspend fun count(): Long
 
-    @Query("SELECT * FROM user WHERE user.google_token_hash=:token")
+    @Query("SELECT * FROM user WHERE user.google_token_id=:token")
     fun getByGoogleToken(token: String): Flow<UserEntity>
 }

@@ -36,7 +36,7 @@ class UserDaoTest : BaseDaoTest<UserEntity>() {
         val expected = UserTestData.first()
         database.userDao().insert(expected)
 
-        val token = expected.googleTokenHash
+        val token = expected.googleTokenId
         val actual = database.userDao().getByGoogleToken(token).take(ONE).single()
 
         assertThat(actual).isEqualTo(expected)
@@ -47,7 +47,7 @@ class UserDaoTest : BaseDaoTest<UserEntity>() {
         val existingUser = UserTestData.first()
         database.userDao().insert(existingUser)
 
-        val nonexistentToken = UserTestData.second().googleTokenHash
+        val nonexistentToken = UserTestData.second().googleTokenId
         val actual = database.userDao().getByGoogleToken(nonexistentToken).take(ONE).single()
 
         assertThat(actual).isNull()

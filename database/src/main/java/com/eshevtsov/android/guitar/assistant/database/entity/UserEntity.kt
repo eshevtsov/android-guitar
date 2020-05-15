@@ -8,12 +8,12 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "user",
     indices = [
-        Index(value = ["google_token_hash"], unique = true)
+        Index(value = ["google_token_id"], unique = true)
     ]
 )
 data class UserEntity(
-    @ColumnInfo(name = "google_token_hash")
-    val googleTokenHash: String,
+    @ColumnInfo(name = "google_token_id")
+    val googleTokenId: String,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

@@ -5,19 +5,19 @@ import com.eshevtsov.android.guitar.assistant.database.entity.UserEntity
 object UserTestData : TestData<UserEntity> {
     override fun first() =
         UserEntity(
-            googleTokenHash = "firstUserGoogleTokenHash",
+            googleTokenId = "firstUserGoogleTokenId",
             id = 1L
         )
 
     override fun second() =
         UserEntity(
-            googleTokenHash = "secondUserGoogleTokenHash",
+            googleTokenId = "secondUserGoogleTokenId",
             id = 2L
         )
 
     override fun withoutId() =
         UserEntity(
-            googleTokenHash = "withoutIdUserGoogleTokenHash"
+            googleTokenId = "withoutIdUserGoogleTokenId"
         )
 
     override fun copy(item: UserEntity, id: Long?) = item.copy(id = id ?: item.id)
