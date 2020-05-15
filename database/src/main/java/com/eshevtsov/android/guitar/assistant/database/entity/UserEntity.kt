@@ -15,6 +15,9 @@ data class UserEntity(
     @ColumnInfo(name = "google_token_id")
     val googleTokenId: String,
 
+    @ColumnInfo(name = "display_title")
+    val displayTitle: String? = null,
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     override val id: Long = 0L

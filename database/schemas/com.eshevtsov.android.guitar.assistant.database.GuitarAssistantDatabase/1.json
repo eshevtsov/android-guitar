@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7c0503ec4e0959661799d3078d909458",
+    "identityHash": "170ceefb20eb6f2d207755088d8a6bd7",
     "entities": [
       {
         "tableName": "album",
@@ -347,13 +347,19 @@
       },
       {
         "tableName": "user",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`google_token_id` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`google_token_id` TEXT NOT NULL, `display_title` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
         "fields": [
           {
             "fieldPath": "googleTokenId",
             "columnName": "google_token_id",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "displayTitle",
+            "columnName": "display_title",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "id",
@@ -384,7 +390,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7c0503ec4e0959661799d3078d909458')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '170ceefb20eb6f2d207755088d8a6bd7')"
     ]
   }
 }
