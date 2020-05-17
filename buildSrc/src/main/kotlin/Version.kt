@@ -1,6 +1,7 @@
 object Version {
     const val kotlin = "1.3.72"
     const val gradlePlugin = "4.0.0-beta04"
+    const val googleServicesPlugin = "4.3.3"
     const val appcompat = "1.1.0"
     const val androidxCoreKtx = "1.3.0-rc01"
     const val material = "1.2.0-alpha06"
@@ -11,9 +12,14 @@ object Version {
     const val jUnit = "1.1.0"
     const val robolectric = "4.1"
     const val truth = "1.0.1"
+    const val truthExt = "1.2.0"
     const val fragment = "1.3.0-alpha04"
+    const val activity = "1.2.0-alpha04"
+    const val constraintLayout = "2.0.0-beta6"
     const val lifecycle = "2.3.0-alpha02"
     const val lifecycleArch = "2.1.0"
     const val navigation = "2.3.0-alpha06"
     const val koin = "2.1.5"
+    const val googleAuth = "18.0.0"
+    const val mockk = "1.10.0"
 }
