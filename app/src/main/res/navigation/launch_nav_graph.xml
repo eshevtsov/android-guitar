@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.eshevtsov.android.guitar.assistant.feature.login.LoginFragment"
+        android:name="com.eshevtsov.android.guitar.assistant.feature.login.ui.LoginFragment"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_login_to_main"

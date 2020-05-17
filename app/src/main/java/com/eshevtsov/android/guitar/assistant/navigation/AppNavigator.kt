@@ -1,10 +1,9 @@
 package com.eshevtsov.android.guitar.assistant.navigation
 
+import android.view.View
 import androidx.annotation.IdRes
-import androidx.navigation.NavController
+import com.eshevtsov.android.guitar.assistant.core.feature.error.ErrorNavigation
 
-interface AppNavigator {
-    fun bind(navController: NavController)
-    fun unbind()
-    fun navigate(@IdRes destinationId: Int)
+interface AppNavigator : ErrorNavigation {
+    fun navigate(view: View, @IdRes destinationId: Int)
 }

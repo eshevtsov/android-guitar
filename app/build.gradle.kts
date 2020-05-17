@@ -1,4 +1,3 @@
-
 import com.android.build.gradle.BaseExtension
 import extensions.KeystoreModel
 import extensions.fromProperties
@@ -8,6 +7,8 @@ val debugKeystore = KeystoreModel.fromProperties("${projectDir.path}\\debug_conf
 
 plugins {
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
+    kotlin("kapt")
 }
 
 android {
@@ -30,14 +31,20 @@ android {
 }
 
 dependencies {
+    implementation(project(Module.database))
     implementation(project(Module.coreFeature))
     implementation(project(Module.featureHome))
     implementation(project(Module.featureLogin))
 
+    room()
     appCompat()
     navigation()
     fragment()
     koin()
+    implementation(Dep.googleAuth)
+
+    test()
+    androidTest()
 }
 
 fun Project.createSigningConfigs(

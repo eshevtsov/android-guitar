@@ -3,15 +3,17 @@ package com.eshevtsov.android.guitar.assistant
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentFactory
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.eshevtsov.android.guitar.assistant.extensions.initWith
-import com.eshevtsov.android.guitar.assistant.navigation.AppNavigator
+import com.eshevtsov.android.guitar.assistant.feature.login.domain.UserInteractor
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 class LaunchActivity : AppCompatActivity(R.layout.activity_launch) {
 
-    private val appNavigation: AppNavigator by inject()
     private val fragmentFactory: FragmentFactory by inject()
+    private val userInteractor: UserInteractor by inject()
 
     private val navHost: NavHostFragment?
         get() = supportFragmentManager.findFragmentById(R.id.launch_nav_host_fragment) as? NavHostFragment
@@ -25,15 +27,13 @@ class LaunchActivity : AppCompatActivity(R.layout.activity_launch) {
         }
     }
 
-    override fun onDestroy() {
-        appNavigation.unbind()
-        super.onDestroy()
-    }
-
     private fun initNavHostFragment() {
-        navHost?.run {
-            initWith(R.navigation.launch_nav_graph, R.id.login, fragmentFactory)
-            appNavigation.bind(navController)
+        lifecycleScope.launch {
+            val startDestId = when {
+                userInteractor.trySilentLogin() -> R.id.main
+                else -> R.id.login
+            }
+            navHost?.initWith(R.navigation.launch_nav_graph, startDestId, fragmentFactory)
         }
     }
 }
