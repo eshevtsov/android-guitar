@@ -17,6 +17,9 @@ object Dep {
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Version.fragment}"
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Version.fragment}"
 
+    const val activityKtx = "androidx.activity:activity-ktx:${Version.activity}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
+
     const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
     const val viewmodelSavedstate = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Version.lifecycle}"
     const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
@@ -36,17 +39,21 @@ object Dep {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutines}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutines}"
 
+    const val googleAuth = "com.google.android.gms:play-services-auth:${Version.googleAuth}"
+
     const val testRunner = "androidx.test:runner:${Version.testRunner}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Version.espressoCore}"
     const val jUnit = "androidx.test.ext:junit:${Version.jUnit}"
+    const val truthExt = "androidx.test.ext:truth:${Version.truthExt}"
     const val robolectric = "org.robolectric:robolectric:${Version.robolectric}"
     const val kotlinJUnit = "org.jetbrains.kotlin:kotlin-test-junit:${Version.kotlin}"
     const val truth = "com.google.truth:truth:${Version.truth}"
+    const val mockkAndroid =  "io.mockk:mockk-android:${Version.mockk}"
+    const val mockk =  "io.mockk:mockk:${Version.mockk}"
 }
 
 fun DependencyHandler.coroutines() {
     implementation(Dep.coroutines)
-    androidTestImplementation(Dep.coroutinesTest)
 }
 
 fun DependencyHandler.koin() {
@@ -68,12 +75,17 @@ fun DependencyHandler.lifecycle() {
     implementation(Dep.lifecycleRuntime)
     implementation(Dep.lifecycleService)
     implementation(Dep.lifecycleProcess)
+    testImplementation(Dep.coreTesting)
     androidTestImplementation(Dep.coreTesting)
 }
 
 fun DependencyHandler.fragment() {
     implementation(Dep.fragmentKtx)
     androidTestImplementation(Dep.fragmentTesting)
+}
+
+fun DependencyHandler.activity() {
+    implementation(Dep.activityKtx)
 }
 
 fun DependencyHandler.appCompat() {
@@ -89,6 +101,15 @@ fun DependencyHandler.room() {
     testImplementation(Dep.roomTesting)
 }
 
+fun DependencyHandler.test() {
+    testImplementation(Dep.coroutinesTest)
+    testImplementation(Dep.jUnit)
+    testImplementation(Dep.kotlinJUnit)
+    testImplementation(Dep.truth)
+    testImplementation(Dep.truthExt)
+    testImplementation(Dep.mockk)
+}
+
 fun DependencyHandler.androidTest() {
     androidTestImplementation(Dep.coroutinesTest)
     androidTestImplementation(Dep.testRunner)
@@ -96,4 +117,6 @@ fun DependencyHandler.androidTest() {
     androidTestImplementation(Dep.jUnit)
     androidTestImplementation(Dep.kotlinJUnit)
     androidTestImplementation(Dep.truth)
+    androidTestImplementation(Dep.truthExt)
+    androidTestImplementation(Dep.mockkAndroid)
 }
