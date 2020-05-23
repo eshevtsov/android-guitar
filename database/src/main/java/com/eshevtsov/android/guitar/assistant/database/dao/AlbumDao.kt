@@ -30,4 +30,7 @@ interface AlbumDao : BaseOperationsDao<AlbumEntity> {
     @Transaction
     @Query("SELECT * FROM album WHERE album.id=:id")
     fun getDetails(id: Long): Flow<AlbumDetailsDto>
+
+    @Query("SELECT count(*) FROM album WHERE album.artist_foreign_id=:artistId")
+    suspend fun count(artistId: Long): Long
 }

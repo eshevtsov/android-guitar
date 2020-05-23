@@ -93,4 +93,27 @@ class AlbumDaoTest : BaseDaoTest<AlbumEntity>() {
 
         assertThat(actual).isEqualTo(expected)
     }
+
+    @Test
+    fun count_artist_albums_return_expected() = runBlockingTest {
+        val artist = ArtistTestData.withoutId()
+        val artistId = database.artistDao().insert(artist)
+        val album = AlbumTestData.first().copy(artistForeignId = artistId)
+        database.albumDao().insert(album)
+        val expected = ONE
+
+        val actual = database.albumDao().count(artistId)
+
+        assertThat(actual).isEqualTo(expected)
+    }
+
+    @Test
+    fun count_empty_artist_albums_return_zero() = runBlockingTest {
+        val artistId = ArtistTestData.withoutId().id
+        val expected = ZERO
+
+        val actual = database.albumDao().count(artistId)
+
+        assertThat(actual).isEqualTo(expected)
+    }
 }
