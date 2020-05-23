@@ -84,4 +84,33 @@ class UserArtistDaoTest : BaseDaoTest<UserArtistEntity>() {
 
         assertThat(actual).isEqualTo(expected)
     }
+
+    @Test
+    fun count_user_artist_return_expected() = runBlockingTest {
+        val artist = ArtistTestData.withoutId()
+        val firstArtistId = database.artistDao().insert(artist)
+        val secondArtistId = database.artistDao().insert(artist)
+        val user = UserTestData.withoutId()
+        val userId = database.userDao().insert(user)
+        val userArtistList = listOf(
+            UserArtistTestData.first().copy(id = firstArtistId, userId = userId),
+            UserArtistTestData.first().copy(id = secondArtistId, userId = userId)
+        )
+        database.userArtistDao().insert(userArtistList)
+        val expected = userArtistList.size
+
+        val actual = database.userArtistDao().count(userId)
+
+        assertThat(actual).isEqualTo(expected)
+    }
+
+    @Test
+    fun count_empty_user_artist_return_zero() = runBlockingTest {
+        val userId = UserTestData.withoutId().id
+        val expected = ZERO
+
+        val actual = database.userArtistDao().count(userId)
+
+        assertThat(actual).isEqualTo(expected)
+    }
 }

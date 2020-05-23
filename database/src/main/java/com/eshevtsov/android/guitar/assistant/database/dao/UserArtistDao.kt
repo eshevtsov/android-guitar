@@ -32,4 +32,7 @@ interface UserArtistDao : BaseOperationsDao<UserArtistEntity> {
     @Transaction
     @Query("SELECT * FROM user_artist WHERE user_artist.user_id=:userId")
     fun getArtistWithAlbumsList(userId: Long): Flow<UserArtistWithAlbumsListDto>
+
+    @Query("SELECT count(*) FROM user_artist WHERE user_artist.user_id=:userId")
+    suspend fun count(userId: Long): Long
 }
