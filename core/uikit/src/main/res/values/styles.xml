@@ -27,25 +27,20 @@
         <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar</item>
         <item name="materialCardViewStyle">@style/Widget.AppTheme.CardView</item>
         <item name="bottomNavigationStyle">@style/Widget.AppTheme.BottomNavigationView</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.AppTheme.Button.Outlined</item>
+        <item name="materialButtonStyle">@style/Widget.AppTheme.Button</item>
+
+        <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.AppTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.AppTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.AppTheme.LargeComponent</item>
     </style>
 
     <style name="AppTheme.Splash">
         <item name="android:statusBarColor">@color/color_tan</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:windowBackground">@drawable/splash_screen_background</item>
-    </style>
-
-    <style name="Widget.AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface"/>
-
-    <style name="Widget.AppTheme.CardView" parent="Widget.MaterialComponents.CardView">
-        <item name="cardElevation">@dimen/default_elevation</item>
-    </style>
-
-    <style name="Widget.AppTheme.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
-        <item name="elevation">@dimen/default_elevation</item>
-        <item name="itemIconTint">@drawable/bottom_navigation_item_icon_tint</item>
-        <item name="itemTextColor">@drawable/bottom_navigation_item_icon_tint</item>
-        <item name="labelVisibilityMode">labeled</item>
     </style>
 
 </resources>
