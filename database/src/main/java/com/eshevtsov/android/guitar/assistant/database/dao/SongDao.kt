@@ -32,4 +32,12 @@ interface SongDao : BaseOperationsDao<SongEntity> {
     @Transaction
     @Query("SELECT * FROM song WHERE song.id=:id")
     fun getSimple(id: Long): Flow<SongSimpleDto>
+
+    @Query("""
+        SELECT count(*) FROM song 
+        INNER JOIN album ON album.id = song.album_foreign_id 
+        INNER JOIN artist ON artist.id = album.artist_foreign_id 
+        WHERE artist.id=:artistId
+    """)
+    suspend fun count(artistId: Long): Long
 }
