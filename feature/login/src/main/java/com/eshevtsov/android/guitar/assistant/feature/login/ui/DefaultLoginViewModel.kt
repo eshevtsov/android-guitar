@@ -21,4 +21,11 @@ class DefaultLoginViewModel(
             navigateToMainEvent.call()
         }
     }
+
+    override fun demo() {
+        viewModelScope.launch(exceptionHandler) {
+            userInteractor.demo()
+            navigateToMainEvent.call()
+        }
+    }
 }

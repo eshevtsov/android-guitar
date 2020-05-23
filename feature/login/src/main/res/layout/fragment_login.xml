@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/feature_login__sign_in_with_google"
@@ -29,6 +29,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/demoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feature_login__try_demo_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
         style="?materialButtonOutlinedStyle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

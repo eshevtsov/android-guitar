@@ -9,4 +9,5 @@ abstract class LoginViewModel : ViewModel(), ErrorSource {
     override val errorEvent = SingleLiveEvent<String>()
     abstract val navigateToMainEvent: SingleLiveEvent<Unit>
     abstract fun login(account: GoogleSignInAccount?)
+    abstract fun demo()
 }

@@ -17,6 +17,10 @@ class DefaultUserInteractor(
         onLogin(user)
     }
 
+    override suspend fun demo() {
+        loginWithGoogle(DemoUser.GOOGLE_TOKEN, DemoUser.DISPLAY_NAME)
+    }
+
     override suspend fun trySilentLogin(): Boolean {
         val userId = userPreferences.loggedUserId
         val user = userRepository.get(userId)

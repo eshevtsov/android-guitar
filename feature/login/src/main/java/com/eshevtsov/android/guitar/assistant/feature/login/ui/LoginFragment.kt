@@ -23,9 +23,8 @@ class LoginFragment(
     }
 
     private fun initView() {
-        login_button.setOnClickListener {
-            login.launch(Unit)
-        }
+        loginButton.setOnClickListener { login.launch(Unit) }
+        demoButton.setOnClickListener { viewModel.demo() }
     }
 
     private fun observeViewModel() = viewModel.run {
