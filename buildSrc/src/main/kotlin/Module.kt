@@ -6,4 +6,7 @@ object Module {
 
     const val featureHome = ":feature:home"
     const val featureLogin = ":feature:login"
+    const val featureSong = ":feature:song"
+    const val featureAlbum = ":feature:album"
+    const val featureArtist = ":feature:artist"
 }

@@ -9,5 +9,9 @@ include(
     ":database",
 
     ":feature:home",
-    ":feature:login"
+    ":feature:login",
+    ":feature:artist",
+    ":feature:album",
+    ":feature:song"
 )
+
