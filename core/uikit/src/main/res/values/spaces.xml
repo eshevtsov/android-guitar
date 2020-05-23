@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_end_small">4dp</dimen>
+    <dimen name="space_end_pre_medium">8dp</dimen>
+    <dimen name="space_end_medium">16dp</dimen>
+    <dimen name="space_end_pre_large">24dp</dimen>
+    <dimen name="space_end_large">40dp</dimen>
+
+    <dimen name="space_start_small">4dp</dimen>
+    <dimen name="space_start_pre_medium">8dp</dimen>
+    <dimen name="space_start_medium">16dp</dimen>
+    <dimen name="space_start_pre_large">24dp</dimen>
+    <dimen name="space_start_large">40dp</dimen>
+
+    <dimen name="space_small">4dp</dimen>
+    <dimen name="space_pre_medium">8dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_pre_large">24dp</dimen>
+    <dimen name="space_large">40dp</dimen>
+</resources>
