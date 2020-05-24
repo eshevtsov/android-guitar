@@ -2,6 +2,7 @@ package com.eshevtsov.android.guitar.assistant.data
 
 import com.eshevtsov.android.guitar.assistant.database.entity.AlbumEntity
 import com.eshevtsov.android.guitar.assistant.database.entity.ArtistEntity
+import com.eshevtsov.android.guitar.assistant.database.entity.LinkEntity
 import com.eshevtsov.android.guitar.assistant.database.entity.SongEntity
 
 object DemoUserData {
@@ -12,6 +13,15 @@ object DemoUserData {
         DemoAlbum.LP_METEORA,
         DemoAlbum.LP_ONE_MORE_LIGHT,
         DemoAlbum.BTS_MIC_DROP
+    )
+
+    val LINK_LIST = listOf(
+        DemoLink.BTS_FACEBOOK,
+        DemoLink.BTS_INSTAGRAM,
+        DemoLink.LP_FACEBOOK,
+        DemoLink.LP_INSTAGRAM,
+        DemoLink.LP_TWITTER,
+        DemoLink.LP_YOUTUBE
     )
 
     val SONG_LIST = listOf(
@@ -33,6 +43,45 @@ private object DemoArtist {
         id = 2L,
         name = "BTS",
         imageUri = "https://i.imgur.com/g6ijvlB.jpg"
+    )
+}
+
+private object DemoLink {
+    val BTS_FACEBOOK = LinkEntity(
+        id = 1L,
+        artistForeignId = DemoArtist.BTS.id,
+        value = "https://www.facebook.com/bangtan.official",
+        type = LinkEntity.Type.Facebook
+    )
+    val BTS_INSTAGRAM = LinkEntity(
+        id = 2L,
+        artistForeignId = DemoArtist.BTS.id,
+        value = "https://www.instagram.com/bts.bighitofficial/",
+        type = LinkEntity.Type.Instagram
+    )
+    val LP_INSTAGRAM = LinkEntity(
+        id = 3L,
+        artistForeignId = DemoArtist.LP.id,
+        value = "https://www.facebook.com/linkinpark/",
+        type = LinkEntity.Type.Facebook
+    )
+    val LP_FACEBOOK = LinkEntity(
+        id = 4L,
+        artistForeignId = DemoArtist.LP.id,
+        value = "https://www.instagram.com/linkinpark/",
+        type = LinkEntity.Type.Instagram
+    )
+    val LP_TWITTER = LinkEntity(
+        id = 5L,
+        artistForeignId = DemoArtist.LP.id,
+        value = "https://twitter.com/linkinpark",
+        type = LinkEntity.Type.Twitter
+    )
+    val LP_YOUTUBE = LinkEntity(
+        id = 6L,
+        artistForeignId = DemoArtist.LP.id,
+        value = "https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q?sub_confirmation=1",
+        type = LinkEntity.Type.Youtube
     )
 }
 

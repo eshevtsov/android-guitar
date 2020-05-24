@@ -29,6 +29,7 @@ class PrepopulateDemoDatabaseOnLogin(
             }
         database.run {
             artistDao().insert(DemoUserData.ARTIST_LIST)
+            linkDao().insert(DemoUserData.LINK_LIST)
             albumDao().insert(DemoUserData.ALBUM_LIST)
             songDao().insert(DemoUserData.SONG_LIST)
             userArtistDao().insert(userArtistList)

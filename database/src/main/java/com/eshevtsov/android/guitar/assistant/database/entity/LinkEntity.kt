@@ -33,6 +33,10 @@ data class LinkEntity(
     enum class Type {
         Unknown,
         Viber,
-        VK
+        Facebook,
+        VK,
+        Instagram,
+        Twitter,
+        Youtube
     }
 }
