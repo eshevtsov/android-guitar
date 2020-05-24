@@ -37,12 +37,12 @@ private object DemoArtist {
     val LP = ArtistEntity(
         id = 1L,
         name = "Linkin Park",
-        imageUri = "https://i.imgur.com/7z6d0Ei.jpg"
+        imageUri = "https://i.ibb.co/HT3J5D9/512x512cc-1.jpg"
     )
     val BTS = ArtistEntity(
         id = 2L,
         name = "BTS",
-        imageUri = "https://i.imgur.com/g6ijvlB.jpg"
+        imageUri = "https://i.ibb.co/Fxv8ZGS/512x512cc.jpg"
     )
 }
 
@@ -91,7 +91,7 @@ private object DemoAlbum {
         artistForeignId = DemoArtist.LP.id,
         name = "Meteora",
         year = 2003,
-        coverUri = "https://i.imgur.com/18KkDfX.jpg"
+        coverUri = "https://i.ibb.co/XZhnGbX/600x600bb.jpg"
     )
 
     val LP_ONE_MORE_LIGHT = AlbumEntity(
@@ -99,7 +99,7 @@ private object DemoAlbum {
         artistForeignId = DemoArtist.LP.id,
         name = "One More Light",
         year = 2017,
-        coverUri = "https://i.imgur.com/gMlIOmH.jpg"
+        coverUri = "https://i.ibb.co/zRnTGtD/lp-one-more-light.jpg"
     )
 
     val BTS_MIC_DROP = AlbumEntity(
@@ -108,7 +108,7 @@ private object DemoAlbum {
         name = "MIC Drop (feat. Desiigner) [Steve Aoki Remix] - Single",
         genre = AlbumEntity.Genre.KPop,
         year = 2017,
-        coverUri = "https://i.imgur.com/JKH0KAG.jpg"
+        coverUri = "https://i.ibb.co/t4bpW3q/600x600bb-1.jpg"
     )
 }
 
