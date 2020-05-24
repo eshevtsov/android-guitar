@@ -40,7 +40,10 @@ object DemoUserData {
         DemoSong.LP_NUMB,
         DemoSong.LP_FAINT,
         DemoSong.LP_BREAKING_THE_HABIT,
-        DemoSong.LP_TALKING_TO_MYSELF
+        DemoSong.LP_TALKING_TO_MYSELF,
+        DemoSong.LP_BURN_IT_DOWN,
+        DemoSong.LP_CASTLE_OF_GLASS,
+        DemoSong.LP_WAR
     )
 }
 
@@ -536,6 +539,160 @@ private object DemoSong {
             Talking to myself
             Yeah I know, yeah I know, yeah I know
             Talking to myself
+        """.trimIndent()
+    )
+    val LP_WAR = SongEntity(
+        id = 6L,
+        albumForeignId = DemoAlbum.LP_HUNTING_PARTY.id,
+        name = "War",
+        timeMilliseconds = 210600,
+        numberInAlbum = 5,
+        text = """
+            [Intro: Chester Bennington]
+            One, two
+            One, two, thank you
+
+            [Verse 1: Chester Bennington]
+            There's no peace, only war
+            Victory decides who's wrong or right
+            It will not cease, only grow
+            You better be prepared to fight
+
+            [Pre-Chorus: Chester Bennington]
+            And it will not apologize
+            For laying down your life
+
+            [Chorus: Chester Bennington]
+            War
+
+            [Verse 2]
+            There's no pain, it will spare
+            Fear has become your only right
+            And once you're lost, in your despair
+            Forever black eternal night
+
+            [Pre-Chorus: Chester Bennington]
+            And it will not apologize
+            For laying down your life
+            [Chorus: Chester Bennington]
+            War, destroyer
+            War, destroyer
+
+            [Bridge: Chester Bennington]
+            It needs no side to justify
+            Laying down your life
+
+            [Chorus: Chester Bennington]
+            War, destroyer
+            War
+        """.trimIndent()
+    )
+    val LP_CASTLE_OF_GLASS = SongEntity(
+        id = 7L,
+        albumForeignId = DemoAlbum.LP_RECHARGED.id,
+        name = "Castle of Glass (M. Shinoda Remix)",
+        timeMilliseconds = 210600,
+        numberInAlbum = 2,
+        text = """
+            [Verse 1: Mike Shinoda & Chester Bennington]
+            Take me down to the river bend
+            Take me down to the fighting end
+            Wash the poison from off my skin
+            Show me how to be whole again
+            Fly me up on a silver wing
+            Past the black where the sirens sing
+            Warm me up in a nova's glow
+            And drop me down to the dream below
+
+            [Chorus: Mike Shinoda & Chester Bennington]
+            'Cause I'm only a crack in this castle of glass
+            Hardly anything there for you to see
+            For you to see
+
+            [Verse 2: Mike Shinoda & Chester Bennington]
+            Bring me home in a blinding dream
+            Through the secrets that I have seen
+            Wash the sorrow from off my skin
+            And show me how to be whole again
+
+            [Chorus: Mike Shinoda & Chester Bennington]
+            'Cause I'm only a crack in this castle of glass
+            Hardly anything there, for you to see
+            For you to see
+            [Bridge: Chester Bennington]
+            'Cause I'm only a crack in this castle of glass
+            Hardly anything else I need to be
+
+            [Chorus: Mike Shinoda & Chester Bennington]
+            'Cause I'm only a crack in this castle of glass
+            Hardly anything there for you to see
+            For you to see, for you to see
+        """.trimIndent()
+    )
+    val LP_BURN_IT_DOWN = SongEntity(
+        id = 8L,
+        albumForeignId = DemoAlbum.LP_LIVING_THINGS.id,
+        name = "Burn It Down",
+        timeMilliseconds = 210600,
+        numberInAlbum = 3,
+        text = """
+            [Verse 1: Chester Bennington]
+            The cycle repeated
+            As explosions broke in the sky
+            All that I needed
+            Was the one thing I couldn't find
+
+            [Pre-Chorus: Chester Bennington]
+            And you were there at the turn
+            Waiting to let me know
+
+            [Chorus: Chester Bennington]
+            We're building it up to break it back down
+            We're building it up to burn it down
+            We can't wait to burn it to the ground
+
+            [Verse 2: Chester Bennington]
+            The colors conflicted
+            As the flames climbed into the clouds
+            I wanted to fix this
+            But couldn't stop from tearing it down
+
+            [Pre-Chorus: Chester Bennington]
+            And you were there at the turn
+            Caught in the burning glow
+            And I was there at the turn
+            Waiting to let you know
+            [Chorus: Chester Bennington]
+            We're building it up to break it back down
+            We're building it up to burn it down
+            We can't wait to burn it to the ground
+
+            [Bridge: Mike Shinoda]
+            You told me yes, you held me high
+            And I believed when you told that lie
+            I played soldier, you played king
+            And struck me down when I kissed that ring
+            You lost that right to hold that crown
+            I built you up but you let me down
+            So when you fall, I'll take my turn
+            And fan the flames as your blazes burn
+
+            [Pre-Chorus: Chester Bennington]
+            And you were there, at the turn
+            Waiting to let me know
+
+            [Chorus: Chester Bennington]
+            We're building it up to break it back down
+            We're building it up to burn it down
+            We can't wait to burn it to the ground
+
+            [Outro: Mike Shinoda & Chester Bennington]
+            When you fall, I'll take my turn
+            And fan the flames as your blazes burn
+            We can't wait to burn it to the ground
+            When you fall, I'll take my turn
+            And fan the flames as your blazes burn
+            We can't wait to burn it to the ground
         """.trimIndent()
     )
 }
