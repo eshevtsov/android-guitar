@@ -10,4 +10,9 @@
         android:name="com.eshevtsov.android.guitar.assistant.feature.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/artists"
+        android:name="com.eshevtsov.android.guitar.assistant.feature.artist.ui.ArtistListFragment"
+        tools:layout="@layout/fragment_artist_list" />
+
 </navigation>

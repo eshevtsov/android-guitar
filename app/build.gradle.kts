@@ -35,6 +35,7 @@ dependencies {
     implementation(project(Module.coreFeature))
     implementation(project(Module.featureHome))
     implementation(project(Module.featureLogin))
+    implementation(project(Module.featureArtist))
 
     room()
     appCompat()
