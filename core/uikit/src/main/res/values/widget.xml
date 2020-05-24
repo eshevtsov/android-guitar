@@ -16,7 +16,7 @@
     <style name="Widget.AppTheme.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="elevation">@dimen/default_elevation</item>
         <item name="android:textColor">@color/selector_outlined_button_text_color</item>
-        <item name="strokeColor">@color/selector_outlined_button_text_color</item>
+        <item name="strokeColor">@color/selector_outlined_button_background_tint</item>
         <item name="iconTint">@color/selector_outlined_button_text_color</item>
         <item name="backgroundTint">@color/selector_outlined_button_background_tint</item>
         <item name="rippleColor">@color/selector_outlined_button_ripple_color</item>
