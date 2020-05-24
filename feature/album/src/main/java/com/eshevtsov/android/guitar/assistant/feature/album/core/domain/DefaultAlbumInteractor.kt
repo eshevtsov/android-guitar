@@ -7,6 +7,10 @@ class DefaultAlbumInteractor(
     override suspend fun getAll(artistId: Long): List<AlbumListItemModel> =
         albumRepository.getAll(artistId)
 
-    override suspend fun getDetails(albumId: Long): AlbumDetailModel =
-        albumRepository.getDetails(albumId)
+    override suspend fun getDetails(albumId: Long): AlbumDetailModel {
+        val details = albumRepository.getDetails(albumId)
+        return details.copy(
+            songs = details.songs.sortedBy(SongListItemModel::numberInAlbum)
+        )
+    }
 }
