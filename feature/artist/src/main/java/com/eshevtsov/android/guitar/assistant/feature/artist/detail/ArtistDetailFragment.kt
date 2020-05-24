@@ -48,7 +48,7 @@ class ArtistDetailFragment(
     private fun observeViewModel() = viewModel.run {
         defaultErrorObserve(this, navigation)
         observe(linkList) { linkListAdapter.updateItems(it) }
-        observe(title) { toolbar.title = it }
+        observe(title) { artistNameTextView.text = it }
         observe(iconUri) { artistIconImageView.load(it) }
         observe(navigateToAlbumListEvent) { navigation.toAlbumList(requireView(), it) }
     }

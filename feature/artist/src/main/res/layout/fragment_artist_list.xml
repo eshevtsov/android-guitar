@@ -7,16 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="@string/feature_artist__list_toolbar_title" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/artistListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/space_medium"
+        android:paddingTop="@dimen/space_pre_large"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="3"

@@ -53,7 +53,7 @@ class AlbumDetailFragment(
     private fun observeViewModel() = viewModel.run {
         defaultErrorObserve(this, navigation)
         observe(songList) { songListAdapter.updateItems(it) }
-        observe(title) { toolbar.title = it }
+        observe(title) { albumNameTextView.text = it }
         observe(artistName) { albumArtistTextView.text = it }
         observe(year) { albumYearTextView.text = it }
         observe(coverUri) { albumCoverImageView.load(it) }
