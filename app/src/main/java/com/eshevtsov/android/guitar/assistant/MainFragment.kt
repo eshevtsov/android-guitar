@@ -5,7 +5,9 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.eshevtsov.android.guitar.assistant.extensions.initWith
+import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment(
     private val fragmentFactory: FragmentFactory
@@ -20,5 +22,7 @@ class MainFragment(
         val navHost = childFragmentManager
             .findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
         navHost.initWith(R.navigation.main_nav_graph, R.id.home, fragmentFactory)
+
+        NavigationUI.setupWithNavController(main_bottom_navigation_view, navHost.navController)
     }
 }
