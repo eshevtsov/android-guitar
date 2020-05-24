@@ -4,10 +4,7 @@ import com.eshevtsov.android.guitar.assistant.koin.app.AppModule
 import com.eshevtsov.android.guitar.assistant.koin.app.DatabaseModule
 import com.eshevtsov.android.guitar.assistant.koin.app.NavigationModule
 import com.eshevtsov.android.guitar.assistant.koin.app.UserEventModule
-import com.eshevtsov.android.guitar.assistant.koin.feature.AlbumModule
-import com.eshevtsov.android.guitar.assistant.koin.feature.ArtistModule
-import com.eshevtsov.android.guitar.assistant.koin.feature.HomeModule
-import com.eshevtsov.android.guitar.assistant.koin.feature.LoginModule
+import com.eshevtsov.android.guitar.assistant.koin.feature.*
 import org.koin.core.module.Module
 
 object KoinModules {
@@ -19,6 +16,7 @@ object KoinModules {
         ArtistModule.default,
         AlbumModule.default,
         LoginModule.default,
-        HomeModule.default
+        HomeModule.default,
+        SongModule.default
     )
 }

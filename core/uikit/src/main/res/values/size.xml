@@ -3,6 +3,6 @@
     <dimen name="layout_artist_list_item_icon_size">80dp</dimen>
     <dimen name="layout_artist_detail_item_icon_size">180dp</dimen>
     <dimen name="layout_album_grid_item_icon_size">160dp</dimen>
-    <dimen name="layout_album_song_list_item_cover_size">60dp</dimen>
     <dimen name="layout_album_detail_item_icon_size">240dp</dimen>
+    <dimen name="layout_song_list_item_icon_size">48dp</dimen>
 </resources>
