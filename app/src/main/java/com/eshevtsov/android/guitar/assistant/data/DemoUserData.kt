@@ -7,12 +7,21 @@ import com.eshevtsov.android.guitar.assistant.database.entity.SongEntity
 
 object DemoUserData {
 
-    val ARTIST_LIST = listOf(DemoArtist.LP, DemoArtist.BTS)
+    val ARTIST_LIST = listOf(
+        DemoArtist.LP,
+        DemoArtist.BTS,
+        DemoArtist.PLACEBO,
+        DemoArtist.IMAGINE_DRAGONS
+    )
 
     val ALBUM_LIST = listOf(
         DemoAlbum.LP_METEORA,
         DemoAlbum.LP_ONE_MORE_LIGHT,
-        DemoAlbum.BTS_MIC_DROP
+        DemoAlbum.LP_HUNTING_PARTY,
+        DemoAlbum.LP_LIVING_THINGS,
+        DemoAlbum.LP_RECHARGED,
+        DemoAlbum.BTS_MIC_DROP,
+        DemoAlbum.PLACEBO_WITHOUT_YOU_IM_NOTHING
     )
 
     val LINK_LIST = listOf(
@@ -21,7 +30,9 @@ object DemoUserData {
         DemoLink.LP_FACEBOOK,
         DemoLink.LP_INSTAGRAM,
         DemoLink.LP_TWITTER,
-        DemoLink.LP_YOUTUBE
+        DemoLink.LP_YOUTUBE,
+        DemoLink.PLACEBO_TWITTER,
+        DemoLink.PLACEBO_YOUTUBE
     )
 
     val SONG_LIST = listOf(
@@ -43,6 +54,16 @@ private object DemoArtist {
         id = 2L,
         name = "BTS",
         imageUri = "https://i.ibb.co/Fxv8ZGS/512x512cc.jpg"
+    )
+    val PLACEBO = ArtistEntity(
+        id = 3L,
+        name = "Placebo",
+        imageUri = "https://i.ibb.co/0c91z8B/placebo.jpg"
+    )
+    val IMAGINE_DRAGONS = ArtistEntity(
+        id = 4L,
+        name = "Imagine Dragons",
+        imageUri = "https://i.ibb.co/rvRRzGB/im.jpg"
     )
 }
 
@@ -83,6 +104,18 @@ private object DemoLink {
         value = "https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q?sub_confirmation=1",
         type = LinkEntity.Type.Youtube
     )
+    val PLACEBO_YOUTUBE = LinkEntity(
+        id = 7L,
+        artistForeignId = DemoArtist.PLACEBO.id,
+        value = "https://www.youtube.com/user/officialplacebo",
+        type = LinkEntity.Type.Youtube
+    )
+    val PLACEBO_TWITTER = LinkEntity(
+        id = 8L,
+        artistForeignId = DemoArtist.PLACEBO.id,
+        value = "https://twitter.com/PLACEBOWORLD",
+        type = LinkEntity.Type.Twitter
+    )
 }
 
 private object DemoAlbum {
@@ -93,7 +126,6 @@ private object DemoAlbum {
         year = 2003,
         coverUri = "https://i.ibb.co/XZhnGbX/600x600bb.jpg"
     )
-
     val LP_ONE_MORE_LIGHT = AlbumEntity(
         id = 2L,
         artistForeignId = DemoArtist.LP.id,
@@ -101,7 +133,6 @@ private object DemoAlbum {
         year = 2017,
         coverUri = "https://i.ibb.co/zRnTGtD/lp-one-more-light.jpg"
     )
-
     val BTS_MIC_DROP = AlbumEntity(
         id = 3L,
         artistForeignId = DemoArtist.BTS.id,
@@ -109,6 +140,38 @@ private object DemoAlbum {
         genre = AlbumEntity.Genre.KPop,
         year = 2017,
         coverUri = "https://i.ibb.co/t4bpW3q/600x600bb-1.jpg"
+    )
+    val PLACEBO_WITHOUT_YOU_IM_NOTHING = AlbumEntity(
+        id = 4L,
+        artistForeignId = DemoArtist.PLACEBO.id,
+        name = "Without You I'm Nothing",
+        genre = AlbumEntity.Genre.Alternative,
+        year = 1998,
+        coverUri = "https://i.ibb.co/DQ30hZ7/placebo-nothing.jpg"
+    )
+    val LP_LIVING_THINGS = AlbumEntity(
+        id = 5L,
+        artistForeignId = DemoArtist.LP.id,
+        name = "Living Things",
+        genre = AlbumEntity.Genre.Alternative,
+        year = 2012,
+        coverUri = "https://i.ibb.co/23h4Sn1/lp-living-things.jpg"
+    )
+    val LP_RECHARGED = AlbumEntity(
+        id = 6L,
+        artistForeignId = DemoArtist.LP.id,
+        name = "Recharged",
+        genre = AlbumEntity.Genre.Alternative,
+        year = 2013,
+        coverUri = "https://i.ibb.co/NTq2xzv/lp-rechared.jpg"
+    )
+    val LP_HUNTING_PARTY = AlbumEntity(
+        id = 7L,
+        artistForeignId = DemoArtist.LP.id,
+        name = "The Hunting party",
+        genre = AlbumEntity.Genre.Alternative,
+        year = 2014,
+        coverUri = "https://i.ibb.co/yV7HpJY/lp-hunting.jpg"
     )
 }
 
@@ -221,7 +284,6 @@ private object DemoSong {
             꽤, 꽤 폼 나지, 포, 포, 폼 나지, yeah
         """.trimIndent()
     )
-
     val LP_NUMB = SongEntity(
         id = 2L,
         albumForeignId = DemoAlbum.LP_METEORA.id,
@@ -281,7 +343,6 @@ private object DemoSong {
             I'm tired of being what you want me to be
         """.trimIndent()
     )
-
     val LP_FAINT = SongEntity(
         id = 3L,
         albumForeignId = DemoAlbum.LP_METEORA.id,
@@ -356,7 +417,6 @@ private object DemoSong {
             Don't turn your back on me, I won't be ignored
         """.trimIndent()
     )
-
     val LP_BREAKING_THE_HABIT = SongEntity(
         id = 4L,
         albumForeignId = DemoAlbum.LP_METEORA.id,
@@ -410,7 +470,6 @@ private object DemoSong {
             I’m breaking the habit tonight
         """.trimIndent()
     )
-
     val LP_TALKING_TO_MYSELF = SongEntity(
         id = 5L,
         albumForeignId = DemoAlbum.LP_ONE_MORE_LIGHT.id,
