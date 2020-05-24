@@ -19,4 +19,6 @@
     <string name="feature_artist__link_twitter">Twitter</string>
     <string name="feature_artist__link_youtube">Youtube</string>
     <string name="feature_artist__link_unknown">Link</string>
+
+    <string name="feature_album__list_toolbar_title">Albums</string>
 </resources>

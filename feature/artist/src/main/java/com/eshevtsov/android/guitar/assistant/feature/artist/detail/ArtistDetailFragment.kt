@@ -41,9 +41,8 @@ class ArtistDetailFragment(
 
     private fun initView() {
         linksRecyclerView.adapter = linkListAdapter
-        toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
+        albumsButton.setOnClickListener { viewModel.onAlbumsButtonCLicked() }
     }
 
     private fun observeViewModel() = viewModel.run {
@@ -51,5 +50,6 @@ class ArtistDetailFragment(
         observe(linkList) { linkListAdapter.updateItems(it) }
         observe(title) { toolbar.title = it }
         observe(iconUri) { artistIconImageView.load(it) }
+        observe(navigateToAlbumListEvent) { navigation.toAlbumList(requireView(), it) }
     }
 }

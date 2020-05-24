@@ -5,4 +5,5 @@ import com.eshevtsov.android.guitar.assistant.core.feature.error.ErrorNavigation
 
 interface ArtistNavigation : ErrorNavigation {
     fun toDetail(view: View, artistId: Long)
+    fun toAlbumList(view: View, artistId: Long)
 }
