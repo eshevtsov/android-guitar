@@ -2,6 +2,7 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
     tools:ignore="InvalidNavigation,UnusedNavigation">
 
@@ -13,6 +14,16 @@
     <fragment
         android:id="@+id/artists"
         android:name="com.eshevtsov.android.guitar.assistant.feature.artist.list.ArtistListFragment"
-        tools:layout="@layout/fragment_artist_list" />
+        tools:layout="@layout/fragment_artist_list">
+
+        <action
+            android:id="@+id/action_artist_list_to_detail"
+            app:destination="@+id/artist_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/artist_detail"
+        android:name="com.eshevtsov.android.guitar.assistant.feature.artist.detail.ArtistDetailFragment"
+        tools:layout="@layout/fragment_artist_detail" />
 
 </navigation>

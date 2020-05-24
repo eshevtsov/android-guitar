@@ -9,4 +9,7 @@ class DefaultArtistInteractor(
 
     override suspend fun getList(): List<ArtistListItemModel> =
         artistRepository.getList(authenticator.user.id)
+
+    override suspend fun getDetail(artistId: Long): ArtistDetailModel =
+        artistRepository.getDetail(artistId)
 }

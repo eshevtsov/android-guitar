@@ -6,5 +6,6 @@ dependencies {
     coroutines()
     fragment()
     lifecycle()
+    implementation(Dep.constraintLayout)
     implementation(Dep.coil)
 }
