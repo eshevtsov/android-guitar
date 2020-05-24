@@ -8,6 +8,7 @@ object Dep {
     const val androidxCoreKtx = "androidx.core:core-ktx:${Version.androidxCoreKtx}"
 
     const val material = "com.google.android.material:material:${Version.material}"
+    const val coil = "io.coil-kt:coil:${Version.coil}"
 
     const val roomRuntime = "androidx.room:room-runtime:${Version.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Version.room}"

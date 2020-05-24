@@ -5,6 +5,7 @@ object Version {
     const val appcompat = "1.1.0"
     const val androidxCoreKtx = "1.3.0-rc01"
     const val material = "1.2.0-alpha06"
+    const val coil = "0.11.0"
     const val room = "2.2.5"
     const val coroutines = "1.3.6"
     const val testRunner = "1.1.1"
