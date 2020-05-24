@@ -11,4 +11,12 @@
 
     <string name="feature_artist__list_item_information">%s albums - %s songs</string>
     <string name="feature_artist__list_toolbar_title">Artists</string>
+    <string name="feature_artist__detail_all_songs">Tracks</string>
+    <string name="feature_artist__detail_all_albums">Albums</string>
+    <string name="feature_artist__detail_links">Links</string>
+    <string name="feature_artist__link_facebook">Facebook</string>
+    <string name="feature_artist__link_instagram">Instagram</string>
+    <string name="feature_artist__link_twitter">Twitter</string>
+    <string name="feature_artist__link_youtube">Youtube</string>
+    <string name="feature_artist__link_unknown">Link</string>
 </resources>
