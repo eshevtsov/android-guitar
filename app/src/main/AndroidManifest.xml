@@ -2,6 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eshevtsov.android.guitar.assistant">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".GuitarAssistantApplication"
         android:allowBackup="false"
