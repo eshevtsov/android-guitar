@@ -2,7 +2,7 @@
     <string name="app_name">GuitarAssistant</string>
     <string name="content_description_app_logo">Application logo</string>
 
-    <string name="bottom_navigation_songs_title">Songs</string>
+    <string name="bottom_navigation_songs_title">Tracks</string>
     <string name="bottom_navigation_artists_title">Artists</string>
     <string name="bottom_navigation_home_title">Home</string>
 
