@@ -1,4 +1,4 @@
-package com.eshevtsov.android.guitar.assistant.feature.album.list
+package com.eshevtsov.android.guitar.assistant.feature.album.core.ui
 
 import android.view.View
 import android.widget.ImageView

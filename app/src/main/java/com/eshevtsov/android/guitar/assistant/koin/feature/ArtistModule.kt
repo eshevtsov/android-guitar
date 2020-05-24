@@ -21,7 +21,7 @@ object ArtistModule {
         single<ArtistEntityToListModelMapper> { DefaultArtistEntityToListModelMapper(get()) }
         single<ArtistInteractor> { DefaultArtistInteractor(get(), get()) }
         single<ArtistRepository> { DefaultArtistRepository(get(), get(), get(), get(), get(), get()) }
-        viewModel<ArtistDetailViewModel> { DefaultArtistDetailViewModel(get()) }
+        viewModel<ArtistDetailViewModel> { DefaultArtistDetailViewModel(get(), get()) }
         viewModel<ArtistListViewModel> { DefaultArtistListViewModel(get()) }
         fragment { ArtistListFragment(get(), get()) }
         fragment { ArtistDetailFragment(get(), get()) }

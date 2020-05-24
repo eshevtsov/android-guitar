@@ -27,17 +27,7 @@
         tools:layout="@layout/fragment_artist_detail">
 
         <action
-            android:id="@+id/action_artist_detail_to_album_list"
-            app:destination="@+id/album_list"/>
-    </fragment>
-
-    <fragment
-        android:id="@+id/album_list"
-        android:name="com.eshevtsov.android.guitar.assistant.feature.album.list.AlbumListFragment"
-        tools:layout="@layout/fragment_album_list">
-
-        <action
-            android:id="@+id/action_album_list_to_detail"
+            android:id="@+id/action_artist_detail_to_album_detail"
             app:destination="@+id/album_detail"/>
     </fragment>
 

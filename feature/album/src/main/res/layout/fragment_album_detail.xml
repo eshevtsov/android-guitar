@@ -55,7 +55,7 @@
                 android:paddingTop="@dimen/space_pre_medium"
                 android:paddingStart="@dimen/space_start_pre_large"
                 android:paddingEnd="@dimen/space_end_pre_large"
-                android:textAppearance="?textAppearanceHeadline6"
+                android:textAppearance="?textAppearanceHeadline5"
                 app:layout_constraintTop_toBottomOf="@id/albumCoverImageView"
                 app:layout_constraintStart_toStartOf="@id/albumCoverImageView"
                 app:layout_constraintEnd_toEndOf="@id/albumCoverImageView"
@@ -75,7 +75,7 @@
                     android:id="@+id/albumArtistTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?textAppearanceSubtitle2"
+                    android:textAppearance="?textAppearanceBody2"
                     tools:text="Linkin Park" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -84,14 +84,14 @@
                     android:layout_height="wrap_content"
                     android:paddingEnd="@dimen/space_start_small"
                     android:paddingStart="@dimen/space_end_small"
-                    android:textAppearance="?textAppearanceSubtitle2"
-                    android:text="@string/feature_album__details_subtitle_divider" />
+                    android:textAppearance="?textAppearanceBody2"
+                    android:text="@string/feature_album__detail_subtitle_divider" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/albumYearTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?textAppearanceSubtitle2"
+                    android:textAppearance="?textAppearanceBody2"
                     tools:text="2017" />
             </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:id="@+id/songsRecyclerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_medium"
+                android:layout_marginTop="@dimen/space_pre_large"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

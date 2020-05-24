@@ -9,6 +9,7 @@ import com.eshevtsov.android.guitar.assistant.core.feature.extension.defaultErro
 import com.eshevtsov.android.guitar.assistant.core.feature.extension.observe
 import com.eshevtsov.android.guitar.assistant.core.feature.logger.Log
 import com.eshevtsov.android.guitar.assistant.core.feature.recycler.RecyclerAdapter
+import com.eshevtsov.android.guitar.assistant.feature.album.core.ui.AlbumListItemLayout
 import com.eshevtsov.android.guitar.assistant.feature.artist.R
 import com.eshevtsov.android.guitar.assistant.feature.artist.core.ui.ArtistNavigation
 import com.eshevtsov.android.guitar.assistant.feature.artist.core.ui.LinkLayout
@@ -21,6 +22,13 @@ class ArtistDetailFragment(
 ) : Fragment(R.layout.fragment_artist_detail) {
 
     private val linkListAdapter = RecyclerAdapter(R.layout.layout_link_list_item, ::LinkLayout)
+
+    private val albumsListAdapter = RecyclerAdapter(
+        R.layout.layout_album_grid_item,
+        createLayout = { itemView ->
+            AlbumListItemLayout(itemView, navigation::toAlbumDetail)
+        }
+    )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,16 +48,16 @@ class ArtistDetailFragment(
     }
 
     private fun initView() {
+        albumsListRecyclerView.adapter = albumsListAdapter
         linksRecyclerView.adapter = linkListAdapter
         toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
-        albumsButton.setOnClickListener { viewModel.onAlbumsButtonCLicked() }
     }
 
     private fun observeViewModel() = viewModel.run {
         defaultErrorObserve(this, navigation)
+        observe(albumList) { albumsListAdapter.updateItems(it) }
         observe(linkList) { linkListAdapter.updateItems(it) }
         observe(title) { artistNameTextView.text = it }
         observe(iconUri) { artistIconImageView.load(it) }
-        observe(navigateToAlbumListEvent) { navigation.toAlbumList(requireView(), it) }
     }
 }

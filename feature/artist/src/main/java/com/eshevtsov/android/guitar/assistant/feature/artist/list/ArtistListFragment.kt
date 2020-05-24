@@ -18,7 +18,7 @@ class ArtistListFragment(
     private val artistListAdapter =
         RecyclerAdapter(
             R.layout.layout_artist_list_item,
-            createLayout = { view -> ArtistListItemLayout(view, navigation::toDetail) }
+            createLayout = { view -> ArtistListItemLayout(view, navigation::toArtistDetail) }
         )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -33,8 +33,7 @@
         android:id="@+id/albumYearTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_small"
-        android:textAppearance="?textAppearanceSubtitle2"
-        tools:text="Meteora" />
+        android:textAppearance="?textAppearanceCaption"
+        tools:text="2017" />
 
 </LinearLayout>

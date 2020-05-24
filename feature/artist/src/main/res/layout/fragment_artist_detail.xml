@@ -29,19 +29,19 @@
             <FrameLayout
                 android:id="@+id/frameLayout"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/layout_artist_detail_item_icon_size"
+                android:layout_height="0dp"
                 android:background="?colorSurface"
-                android:paddingTop="@dimen/space_large"
-                android:paddingBottom="@dimen/space_pre_large"
+                android:layout_marginBottom="@dimen/space_pre_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/artistIconImageView" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/artistIconImageView"
                 android:layout_width="@dimen/layout_artist_detail_item_icon_size"
                 android:layout_height="@dimen/layout_artist_detail_item_icon_size"
-                android:layout_marginTop="@dimen/space_large"
+                android:layout_marginTop="@dimen/space_pre_large"
                 app:srcCompat="@drawable/ic_artist"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,50 +55,69 @@
                 android:gravity="center_horizontal"
                 android:paddingStart="@dimen/space_start_pre_large"
                 android:paddingEnd="@dimen/space_end_pre_large"
-                android:layout_marginTop="@dimen/space_pre_medium"
-                android:textAppearance="?textAppearanceHeadline6"
+                android:layout_marginTop="@dimen/space_small"
+                android:textAppearance="?textAppearanceHeadline5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/artistIconImageView"
                 tools:title="Linkin Park" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/albumsTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                android:layout_marginStart="@dimen/space_start_medium"
+                android:layout_marginEnd="@dimen/space_end_medium"
+                android:text="@string/feature_artist__detail_albums"
+                android:textAppearance="?textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/artistNameTextView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/albumsListRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_start_pre_medium"
+                android:paddingEnd="@dimen/space_end_pre_medium"
+                android:paddingTop="@dimen/space_pre_medium"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/albumsTextView"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_album_grid_item" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/linksTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_large"
+                android:layout_marginStart="@dimen/space_start_medium"
+                android:layout_marginEnd="@dimen/space_end_medium"
+                android:text="@string/feature_artist__detail_links"
+                android:textAppearance="?textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/albumsListRecyclerView" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/linksRecyclerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_large"
+                android:paddingTop="@dimen/space_medium"
+                android:paddingBottom="@dimen/space_pre_large"
+                android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/artistNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/linksTextView"
                 tools:itemCount="3"
                 tools:listitem="@layout/layout_link_list_item" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/songsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_medium"
-                android:text="@string/feature_artist__detail_all_songs"
-                android:translationZ="@dimen/default_elevation"
-                android:layout_marginStart="@dimen/space_start_large"
-                app:icon="@drawable/ic_song"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                style="?materialButtonOutlinedStyle"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/albumsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/feature_artist__detail_all_albums"
-                android:translationZ="@dimen/default_elevation"
-                android:layout_marginEnd="@dimen/space_end_large"
-                android:layout_marginBottom="@dimen/space_medium"
-                app:icon="@drawable/ic_album"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                style="?materialButtonOutlinedStyle"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

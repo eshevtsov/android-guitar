@@ -13,7 +13,6 @@ import com.eshevtsov.android.guitar.assistant.feature.album.R
 import com.eshevtsov.android.guitar.assistant.feature.album.core.ui.AlbumNavigation
 import com.eshevtsov.android.guitar.assistant.feature.album.core.ui.SongListItemLayout
 import com.eshevtsov.android.guitar.assistant.feature.album.detail.AlbumDetailContract.ALBUM_ID_EXTRA
-import com.eshevtsov.android.guitar.assistant.feature.album.list.AlbumListContract.ARTIST_ID_EXTRA
 import kotlinx.android.synthetic.main.fragment_album_detail.*
 
 class AlbumDetailFragment(
@@ -40,7 +39,7 @@ class AlbumDetailFragment(
         if (albumId != null) {
             viewModel.loadDetails(albumId)
         } else {
-            Log.w(TAG, "No required `$ARTIST_ID_EXTRA` arguments extra.")
+            Log.w(TAG, "No required `$ALBUM_ID_EXTRA` arguments extra.")
             requireActivity().onBackPressed()
         }
     }
