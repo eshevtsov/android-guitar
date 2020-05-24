@@ -32,9 +32,7 @@ data class LinkEntity(
 ) : Unique {
     enum class Type {
         Unknown,
-        Viber,
         Facebook,
-        VK,
         Instagram,
         Twitter,
         Youtube
