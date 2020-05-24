@@ -1,4 +1,4 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.ui
+package com.eshevtsov.android.guitar.assistant.feature.artist.list
 
 import android.os.Bundle
 import android.view.View

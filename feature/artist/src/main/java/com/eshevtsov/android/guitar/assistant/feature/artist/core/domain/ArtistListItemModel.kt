@@ -1,4 +1,4 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.domain
+package com.eshevtsov.android.guitar.assistant.feature.artist.core.domain
 
 data class ArtistListItemModel(
     val id: Long,

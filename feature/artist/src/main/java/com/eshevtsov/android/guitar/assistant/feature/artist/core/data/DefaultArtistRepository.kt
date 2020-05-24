@@ -1,10 +1,10 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.data
+package com.eshevtsov.android.guitar.assistant.feature.artist.core.data
 
 import com.eshevtsov.android.guitar.assistant.database.dao.AlbumDao
 import com.eshevtsov.android.guitar.assistant.database.dao.SongDao
 import com.eshevtsov.android.guitar.assistant.database.dao.UserArtistDao
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistListItemModel
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistRepository
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistListItemModel
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistRepository
 import kotlinx.coroutines.flow.single
 import kotlinx.coroutines.flow.take
 

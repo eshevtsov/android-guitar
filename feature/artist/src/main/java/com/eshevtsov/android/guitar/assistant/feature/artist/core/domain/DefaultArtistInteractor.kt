@@ -1,8 +1,5 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.domain
+package com.eshevtsov.android.guitar.assistant.feature.artist.core.domain
 
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistInteractor
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistListItemModel
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistRepository
 import com.eshevtsov.android.guitar.assistant.feature.login.domain.Authenticator
 
 class DefaultArtistInteractor(

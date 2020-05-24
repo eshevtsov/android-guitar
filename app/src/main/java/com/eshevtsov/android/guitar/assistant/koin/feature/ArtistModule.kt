@@ -1,14 +1,14 @@
 package com.eshevtsov.android.guitar.assistant.koin.feature
 
-import com.eshevtsov.android.guitar.assistant.feature.artist.data.ArtistEntityToListModelMapper
-import com.eshevtsov.android.guitar.assistant.feature.artist.data.DefaultArtistEntityToListModelMapper
-import com.eshevtsov.android.guitar.assistant.feature.artist.data.DefaultArtistRepository
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistInteractor
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistRepository
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.DefaultArtistInteractor
-import com.eshevtsov.android.guitar.assistant.feature.artist.ui.ArtistListFragment
-import com.eshevtsov.android.guitar.assistant.feature.artist.ui.ArtistListViewModel
-import com.eshevtsov.android.guitar.assistant.feature.artist.ui.DefaultArtistListViewModel
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.data.ArtistEntityToListModelMapper
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.data.DefaultArtistEntityToListModelMapper
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.data.DefaultArtistRepository
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistInteractor
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistRepository
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.DefaultArtistInteractor
+import com.eshevtsov.android.guitar.assistant.feature.artist.list.ArtistListFragment
+import com.eshevtsov.android.guitar.assistant.feature.artist.list.ArtistListViewModel
+import com.eshevtsov.android.guitar.assistant.feature.artist.list.DefaultArtistListViewModel
 import org.koin.androidx.fragment.dsl.fragment
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

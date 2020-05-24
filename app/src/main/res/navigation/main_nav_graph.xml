@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/artists"
-        android:name="com.eshevtsov.android.guitar.assistant.feature.artist.ui.ArtistListFragment"
+        android:name="com.eshevtsov.android.guitar.assistant.feature.artist.list.ArtistListFragment"
         tools:layout="@layout/fragment_artist_list" />
 
 </navigation>

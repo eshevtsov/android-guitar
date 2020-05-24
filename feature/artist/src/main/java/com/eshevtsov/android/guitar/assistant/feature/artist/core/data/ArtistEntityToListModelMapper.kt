@@ -1,7 +1,7 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.data
+package com.eshevtsov.android.guitar.assistant.feature.artist.core.data
 
 import com.eshevtsov.android.guitar.assistant.database.entity.ArtistEntity
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistListItemModel
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistListItemModel
 
 interface ArtistEntityToListModelMapper {
     operator fun invoke(

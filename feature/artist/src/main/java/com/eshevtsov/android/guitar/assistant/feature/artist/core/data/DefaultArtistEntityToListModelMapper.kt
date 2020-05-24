@@ -1,9 +1,8 @@
-package com.eshevtsov.android.guitar.assistant.feature.artist.data
+package com.eshevtsov.android.guitar.assistant.feature.artist.core.data
 
 import com.eshevtsov.android.guitar.assistant.core.feature.resource.StringProvider
 import com.eshevtsov.android.guitar.assistant.database.entity.ArtistEntity
-import com.eshevtsov.android.guitar.assistant.feature.artist.data.ArtistEntityToListModelMapper
-import com.eshevtsov.android.guitar.assistant.feature.artist.domain.ArtistListItemModel
+import com.eshevtsov.android.guitar.assistant.feature.artist.core.domain.ArtistListItemModel
 
 class DefaultArtistEntityToListModelMapper(
     private val stringProvider: StringProvider
