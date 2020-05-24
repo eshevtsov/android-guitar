@@ -7,5 +7,8 @@ data class SongNameDto(
     val id: Long,
 
     @ColumnInfo(name = "name")
-    val name: String
+    val name: String,
+
+    @ColumnInfo(name = "number_in_album")
+    val numberInAlbum: Int? = null
 )

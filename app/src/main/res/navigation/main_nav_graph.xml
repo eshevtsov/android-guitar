@@ -34,6 +34,16 @@
     <fragment
         android:id="@+id/album_list"
         android:name="com.eshevtsov.android.guitar.assistant.feature.album.list.AlbumListFragment"
-        tools:layout="@layout/fragment_album_list" />
+        tools:layout="@layout/fragment_album_list">
+
+        <action
+            android:id="@+id/action_album_list_to_detail"
+            app:destination="@+id/album_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/album_detail"
+        android:name="com.eshevtsov.android.guitar.assistant.feature.album.detail.AlbumDetailFragment"
+        tools:layout="@layout/fragment_album_detail" />
 
 </navigation>

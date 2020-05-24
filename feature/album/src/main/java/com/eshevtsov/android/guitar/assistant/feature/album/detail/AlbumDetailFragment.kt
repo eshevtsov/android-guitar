@@ -1,8 +1,9 @@
-package com.eshevtsov.android.guitar.assistant.feature.album.list
+package com.eshevtsov.android.guitar.assistant.feature.album.detail
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import coil.api.load
 import com.eshevtsov.android.guitar.assistant.core.feature.extension.TAG
 import com.eshevtsov.android.guitar.assistant.core.feature.extension.defaultErrorObserve
 import com.eshevtsov.android.guitar.assistant.core.feature.extension.observe
@@ -10,18 +11,20 @@ import com.eshevtsov.android.guitar.assistant.core.feature.logger.Log
 import com.eshevtsov.android.guitar.assistant.core.feature.recycler.RecyclerAdapter
 import com.eshevtsov.android.guitar.assistant.feature.album.R
 import com.eshevtsov.android.guitar.assistant.feature.album.core.ui.AlbumNavigation
+import com.eshevtsov.android.guitar.assistant.feature.album.core.ui.SongListItemLayout
+import com.eshevtsov.android.guitar.assistant.feature.album.detail.AlbumDetailContract.ALBUM_ID_EXTRA
 import com.eshevtsov.android.guitar.assistant.feature.album.list.AlbumListContract.ARTIST_ID_EXTRA
-import kotlinx.android.synthetic.main.fragment_album_list.*
+import kotlinx.android.synthetic.main.fragment_album_detail.*
 
-class AlbumListFragment(
+class AlbumDetailFragment(
     private val navigation: AlbumNavigation,
-    private val viewModel: AlbumListViewModel
-) : Fragment(R.layout.fragment_album_list) {
+    private val viewModel: AlbumDetailViewModel
+) : Fragment(R.layout.fragment_album_detail) {
 
-    private val albumsListAdapter = RecyclerAdapter(
-        R.layout.layout_album_grid_item,
+    private val songListAdapter = RecyclerAdapter(
+        R.layout.layout_album_song_list_item,
         createLayout = { itemView ->
-            AlbumListItemLayout(itemView, navigation::toAlbumDetail)
+            SongListItemLayout(itemView) { view, id ->  }
         }
     )
 
@@ -33,9 +36,9 @@ class AlbumListFragment(
     }
 
     private fun initExtra() {
-        val artistId = arguments?.getLong(ARTIST_ID_EXTRA)
-        if (artistId != null) {
-            viewModel.loadAlbums(artistId)
+        val albumId = arguments?.getLong(ALBUM_ID_EXTRA)
+        if (albumId != null) {
+            viewModel.loadDetails(albumId)
         } else {
             Log.w(TAG, "No required `$ARTIST_ID_EXTRA` arguments extra.")
             requireActivity().onBackPressed()
@@ -43,14 +46,16 @@ class AlbumListFragment(
     }
 
     private fun initView() {
-        albumsListRecyclerView.adapter = albumsListAdapter
-        toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
-        }
+        songsRecyclerView.adapter = songListAdapter
+        toolbar.setNavigationOnClickListener { requireActivity().onBackPressed() }
     }
 
     private fun observeViewModel() = viewModel.run {
         defaultErrorObserve(this, navigation)
-        observe(albumList) { albumsListAdapter.updateItems(it) }
+        observe(songList) { songListAdapter.updateItems(it) }
+        observe(title) { toolbar.title = it }
+        observe(artistName) { albumArtistTextView.text = it }
+        observe(year) { albumYearTextView.text = it }
+        observe(coverUri) { albumCoverImageView.load(it) }
     }
 }

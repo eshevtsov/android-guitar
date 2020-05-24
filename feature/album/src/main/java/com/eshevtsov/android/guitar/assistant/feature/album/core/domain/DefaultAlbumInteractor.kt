@@ -6,4 +6,7 @@ class DefaultAlbumInteractor(
 
     override suspend fun getAll(artistId: Long): List<AlbumListItemModel> =
         albumRepository.getAll(artistId)
+
+    override suspend fun getDetails(albumId: Long): AlbumDetailModel =
+        albumRepository.getDetails(albumId)
 }
