@@ -31,7 +31,6 @@
 
     <style name="Widget.AppTheme.ShapeableImageView.Round" parent="">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.AppTheme.Round</item>
-        <item name="tint">?colorSecondary</item>
         <item name="elevation">@dimen/default_elevation</item>
     </style>
 

@@ -8,4 +8,7 @@
 
     <string name="feature_login__sign_in_with_google">Sign in with Google</string>
     <string name="feature_login__try_demo_login">Try demo</string>
+
+    <string name="feature_artist__list_item_information">%s albums - %s songs</string>
+    <string name="feature_artist__list_toolbar_title">Artists</string>
 </resources>
