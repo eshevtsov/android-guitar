@@ -5,4 +5,5 @@
     <dimen name="layout_album_grid_item_icon_size">160dp</dimen>
     <dimen name="layout_album_detail_item_icon_size">240dp</dimen>
     <dimen name="layout_song_list_item_icon_size">48dp</dimen>
+    <dimen name="layout_song_detail_item_icon_size">140dp</dimen>
 </resources>

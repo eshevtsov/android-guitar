@@ -1,5 +1,6 @@
 package com.eshevtsov.android.guitar.assistant.feature.song.core.data
 
+import com.eshevtsov.android.guitar.assistant.database.dao.SongDao
 import com.eshevtsov.android.guitar.assistant.database.dao.UserArtistDao
 import com.eshevtsov.android.guitar.assistant.feature.song.core.domain.SongDetailModel
 import com.eshevtsov.android.guitar.assistant.feature.song.core.domain.SongListItemModel
@@ -9,7 +10,9 @@ import kotlinx.coroutines.flow.take
 
 class DefaultSongRepository(
     private val userArtistDao: UserArtistDao,
-    private val mapArtistEntityToSongListModel: ArtistEntityToSongListModelMapper
+    private val songDao: SongDao,
+    private val mapArtistEntityToSongListModel: ArtistEntityToSongListModelMapper,
+    private val mapSongDetailsEntityToModel: SongDetailsEntityToModelMapper
 ) : SongRepository {
 
     override suspend fun getAll(userId: Long): List<SongListItemModel> {
@@ -23,6 +26,9 @@ class DefaultSongRepository(
     }
 
     override suspend fun getDetail(songId: Long): SongDetailModel {
-        return SongDetailModel(songId)
+        val entity = songDao.getDetails(songId)
+            .take(1)
+            .single()
+        return mapSongDetailsEntityToModel(entity)
     }
 }

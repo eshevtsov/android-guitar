@@ -23,7 +23,7 @@ class AlbumDetailFragment(
     private val songListAdapter = RecyclerAdapter(
         R.layout.layout_album_song_list_item,
         createLayout = { itemView ->
-            SongListItemLayout(itemView) { view, id ->  }
+            SongListItemLayout(itemView, navigation::toSongDetail)
         }
     )
 

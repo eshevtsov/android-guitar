@@ -10,4 +10,7 @@ class DefaultSongInteractor(
     override suspend fun getList(): List<SongListItemModel> =
         songRepository.getAll(authenticator.user.id)
             .sortedBy(SongListItemModel::name)
+
+    override suspend fun getDetail(songId: Long): SongDetailModel =
+        songRepository.getDetail(songId)
 }
